@@ -8,9 +8,9 @@ RUN npm install
 # Build app
 COPY . .
 RUN npx prisma generate
-RUN npx prisma db push
+
 RUN npm run build
 # Expose port
 EXPOSE 3000
 # Start app
-CMD [ "npm", "start" ]
+CMD ["sh", "-c", "npx prisma db push && npm start"]
