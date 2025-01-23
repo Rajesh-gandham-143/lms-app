@@ -5,6 +5,7 @@ pipeline{
             steps{
                 script {
                 sh '''
+                rm -rf /usr/local/apache2/htdocs/*
                 cd webapp
                 ls
                 docker build -t rajesh_node .
