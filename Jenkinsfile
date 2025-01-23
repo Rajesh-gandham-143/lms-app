@@ -20,13 +20,13 @@ pipeline{
         stage('deploy_webapp'){
             steps{
                 script {
-                sh '''
-                rm -rf /usr/local/apache2/htdocs/*
-                cd webapp
-                ls
-                docker build -t rajesh_node .
-                docker run -dt --name lms_webapp -p 90:80 --network lms_net rajesh_node
-                '''
+                    sh '''
+                    rm -rf /usr/local/apache2/htdocs/*
+                    cd webapp
+                    ls
+                    docker build -t rajesh_node .
+                    docker run -dt --name lms_webapp -p 90:80 --network lms_net rajesh_node
+                    '''
                 }
             }
         }
