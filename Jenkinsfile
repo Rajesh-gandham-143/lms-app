@@ -25,7 +25,7 @@ pipeline{
                 cd webapp
                 ls
                 docker build -t rajesh_node .
-                docker run -dt --name lms_webapp -p --network lms_net 90:80 rajesh_node
+                docker run -dt --name lms_webapp -p 90:80 --network lms_net rajesh_node
                 '''
                 }
             }
