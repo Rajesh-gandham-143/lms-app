@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('deploy_webapp') {
+        stage('deploy_database') {
             steps{
                 sh 'docker run -d --name lms_database -p 5432:5432 -e POSTGRES_PASSWORD=datauser --network lms_net postgres'
             }
@@ -17,7 +17,7 @@ pipeline{
                 }
             }
         }
-        stage('deploy database'){
+        stage('deploy_webapp'){
             steps{
                 script {
                 sh '''
